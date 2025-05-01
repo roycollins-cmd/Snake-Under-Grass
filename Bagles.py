@@ -48,7 +48,7 @@ def main():
             print("Thank you for playing!")
             break
 
-
+# loop to randomly generate secret numbers every turn
 def getSecretNum():
     numbers = list('0123456789')
     random.shuffle(numbers)
@@ -58,7 +58,7 @@ def getSecretNum():
         secret_number += str(numbers[i])
     return secret_number
 
-
+# loop to check the digit positions and give clues - clues Pico, Fermi & Bagles are defined on top
 def getClues(guess,secret_number):
     if guess == secret_number:
         return 'You guessed the secret number!'
