@@ -43,10 +43,11 @@ def main():
                     print('you ran out of guesses')
                     print('the answer was {}.'.format(secret_number))
 
-            print('do you wanna play again? (yes/no)')
-            if not input('> ').lower().startswith('y'):
-                break
-        print("Thank you for playing!")
+        print('do you wanna play again? (yes/no)')
+        if not input('> ').lower().startswith('y'):
+            print("Thank you for playing!")
+            break
+
 
 def getSecretNum():
     numbers = list('0123456789')
