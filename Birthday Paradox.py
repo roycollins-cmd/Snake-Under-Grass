@@ -17,7 +17,7 @@ def getBirthdays(numberOfBirthdays):
         startOfYear = datetime.date(2001, 1, 1)
 
         #get a random day into the year:
-        randomNumberOfDays = datetime.timdelta(random.randint(0, 364))
+        randomNumberOfDays = datetime.timedelta(random.randint(0, 364))
         birthday = startOfYear + randomNumberOfDays
         birthdays.append(birthday)
     return birthdays
