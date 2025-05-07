@@ -41,5 +41,5 @@ try:
                 print(message[i % len(message)], end='')
         print('\n')
 except KeyboardInterrupt:
-    print('\nBye')
+    print('Bye')
 
