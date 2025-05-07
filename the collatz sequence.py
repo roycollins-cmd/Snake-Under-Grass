@@ -1,6 +1,7 @@
 """
 The collatz sequence AKA the simplest impossible math problem
 """
+import sys
 
 def collatz(number):
     #check if the number is even
@@ -19,6 +20,12 @@ def collatz(number):
             print(number)
         return number
 
-value  = int(input("Enter a number: "))
-sequence = collatz(value)
-print(sequence)
+# the try and except syntax is simple:
+#try is the block to run, except is what to run if there is an error
+try:
+    value  = int(input("Enter a number: "))
+    sequence = collatz(value)
+    print(sequence)
+
+except ValueError:
+    print("enter a number, this program only accepts numbers...")
