@@ -1,7 +1,7 @@
 """
 The collatz sequence AKA the simplest impossible math problem
 """
-import sys
+
 
 def collatz(number):
     #check if the number is even
