@@ -155,7 +155,7 @@ def displayHands(playerHand, dealerHand, showDealerHand):
     """
     print('\n')
     if showDealerHand:
-        print('DEALER HAND', getHandValue(dealerHand))
+        print('DEALER HAND: ', getHandValue(dealerHand))
         displayCards(dealerHand)
     else:
         print('DEALER HAND: ???')
@@ -163,7 +163,7 @@ def displayHands(playerHand, dealerHand, showDealerHand):
         displayCards([BACKSIDE] + dealerHand[1:])
 
     #show the player's cards:
-    print('PLAYER:', getHandValue(playerHand))
+    print('PLAYER HAND: ', getHandValue(playerHand))
     displayCards(playerHand)
 
 def getHandValue(cards):
