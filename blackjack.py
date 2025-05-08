@@ -45,13 +45,13 @@ def main():
         #give the dealer and player two cards from the deck each:
         deck = getDeck()
         dealerHand = [deck.pop(), deck.pop()]
-        plaerHand = [deck.pop(), deck.pop()]
+        playerHand = [deck.pop(), deck.pop()]
 
         #Handle player actions:
         print('Bet: ', bet)
         while True:
             #keep looping until player stands or busts.
-            displayhands(playerHand, delerHand, False)
+            displayHands(playerHand, dealerHand, False)
             print()
 
             #check if the player has bust:
@@ -64,7 +64,7 @@ def main():
             #handle the player actions:
             if move == 'D':
                 #Player is doubling down, tey can increase their bet:
-                additionalBet = getbet(min(bet, (money - bet)))
+                additionalBet = getBet(min(bet, (money - bet)))
                 bet += additionalBet
                 print('Bet increased to {}'.format(bet))
                 print('Bet: ', bet)
@@ -89,18 +89,18 @@ def main():
                 #the dealer hits:
                 print('Dealer hits...')
                 dealerHand.append(deck.pop())
-                displayhands(playerHand, dealerHand, False)
+                displayHands(playerHand, dealerHand, False)
 
-                if getHandvalue(dealerHand) > 21:
+                if getHandValue(dealerHand) > 21:
                     break #the dealer has busted.
                 input('Press Enter to continue...')
                 print('\n\n')
 
         #show the final hands:
-        displayHands(playerhand, dealerHand,True)
+        displayHands(playerHand, dealerHand,True)
 
         playerValue = getHandValue(playerHand)
-        dealerValue = getHandvalue(dealerhand)
+        dealerValue = getHandValue(dealerHand)
         #Handle whether the player won, lost, or tied:
         if dealerValue > 21:
             print('Dealer busts! You win${}!'.format(bet))
