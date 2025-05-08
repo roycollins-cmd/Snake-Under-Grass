@@ -4,7 +4,6 @@ black jack is a card game where players try to get as close to 21 points as poss
 """
 
 import sys, random
-from logging import getHandlerNames
 
 # set up the constants:
 HEARTS = chr(9829)
