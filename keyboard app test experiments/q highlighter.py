@@ -11,12 +11,30 @@ class MyWindow(Window, Form):
         self.setupUi(self)
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key.Key_Q:
-            self.keyQ.setStyleSheet('background-color:lightgreen')
+        if Qt.Key.Key_A <= event.key() <= Qt.Key.Key_Z:
+            letter = chr(event.key())
+            widget_name = f'key{letter}'
+
+            widget = getattr(self, widget_name, None)
+            if widget:
+                widget.setStyleSheet('background-color:lightgreen')
+
+            #self.keyQ.setStyleSheet('background-color:lightgreen')
+        #elif event.key() == Qt.Key.Key_W:
+            #self.keyW.setStyleSheet('background-color:lightgreen')
 
     def keyReleaseEvent(self, event):
-        if event.key() == Qt.Key.Key_Q:
-            self.keyQ.setStyleSheet('')
+        if Qt.Key.Key_A <= event.key() <= Qt.Key.Key_Z:
+            letter = chr(event.key())
+            widget_name = f'key{letter}'
+
+            widget = getattr(self, widget_name, None)
+            if widget:
+                widget.setStyleSheet('')
+
+            #self.keyQ.setStyleSheet('')
+        #elif event.key() == Qt.Key.Key_W:
+            #self.keyW.setStyleSheet('')
 
 app = QApplication([])
 window = MyWindow()
